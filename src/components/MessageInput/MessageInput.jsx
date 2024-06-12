@@ -102,9 +102,9 @@ function MessageInputInner(
   };
 
   // Return object with public Api
-  useImperativeHandle(ref, () => ({
-    focus,
-  }));
+  // useImperativeHandle(ref, () => ({
+  //   focus,
+  // }));
 
   // Set focus
   useEffect(() => {
@@ -147,6 +147,11 @@ function MessageInputInner(
       onSend(stateValue, content[0], content[1], content[2]);
     }
   };
+
+  useImperativeHandle(ref, () => ({
+    focus,
+    send,
+  }));
 
   const handleKeyPress = (evt) => {
     if (
